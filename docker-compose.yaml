@@ -1,0 +1,18 @@
+# Deployment docker environment
+# To run this file, use the command:
+# docker-compose up
+version: '3.9'
+services:
+  api:
+    build:
+      context: .
+      dockerfile: ./dockerfile
+    ports:
+      - 3000:3000
+    # env_file:
+    #   - .env
+    # depends_on:
+    #   - db
+    volumes:
+      - ./src:/usr/src/app
+    command: go run main.go
