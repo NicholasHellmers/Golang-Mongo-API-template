@@ -13,3 +13,5 @@ This is a template for a Golang REST API for future projects. Uses MongoDB Atlas
 ```
 MONGOURI=mongodb+srv://user:<password>@cluster0.kgqggff.mongodb.net/?retryWrites=true&w=majority
 ```
+4. Run docker compose -f docker-compose-dev.yaml up for development.
+5. Run docker compose -f docker-compose.yaml up for production.
