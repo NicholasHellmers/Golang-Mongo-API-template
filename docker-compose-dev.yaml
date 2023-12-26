@@ -6,13 +6,13 @@ services:
   api:
     build:
       context: .
-      dockerfile: ./api/dockerfile.dev
+      dockerfile: ./dockerfile.dev
     ports:
-      - 3000:3000
-    env_file:
-      - .env
-    depends_on:
-      - db
+      - 3000:6000
+    # env_file:
+    #   - .env
+    # depends_on:
+    #   - db
     volumes:
-      - .:/usr/src/app
+      - ./src:/usr/src/app
     command: air cmd/main.go -b 0.0.0.0
