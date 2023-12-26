@@ -1,0 +1,15 @@
+FROM golang:latest
+
+WORKDIR /usr/src/app/
+
+RUN go mod init github.com/NicholasHellmers/Golang-Mongo-API-template
+
+RUN go get github.com/gofiber/fiber/v2
+
+RUN go get github.com/cosmtrek/air
+
+RUN go install github.com/cosmtrek/air@latest
+
+COPY ./src .
+
+RUN go mod tidy

@@ -1,0 +1,18 @@
+# Development docker environment
+# To run this file, use the command:
+# docker-compose -f docker-compose-dev.yaml up --build
+version: '3.9'
+services:
+  api:
+    build:
+      context: .
+      dockerfile: ./api/dockerfile.dev
+    ports:
+      - 3000:3000
+    env_file:
+      - .env
+    depends_on:
+      - db
+    volumes:
+      - .:/usr/src/app
+    command: air cmd/main.go -b 0.0.0.0
