@@ -8,6 +8,9 @@
 *.so
 *.dylib
 
+# ignore ./src/tmp as it is only of use to the host machine
+/src/tmp/
+
 # Test binary, built with `go test -c`
 *.test
 
